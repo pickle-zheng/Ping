@@ -35,12 +35,24 @@
     const newRoomKey = makeid(5);
     roomKey.update((n) => newRoomKey);
   }
+
+  function roomKeyChangeHandler() {
+    console.log("changing room key to", roomKey_value);
+    roomKey.update((n) => roomKey_value);
+  }
 </script>
 
 <label for="roomKey">Room Key</label>
-<input name="roomKey" bind:value={roomKey_value} minlength="3" maxlength="16" />
-
-<button class="login" on:click={generateRoomKey}>Generate</button>
+<select
+  id="roomKey"
+  name="roomKey"
+  bind:value={roomKey_value}
+  on:change={roomKeyChangeHandler}
+>
+  <option value="cpt">Creative Production Team</option>
+  <option value="darkroom">Dark Room</option>
+  <option value="general">General</option>
+</select>
 
 <label for="username">Username</label>
 <input name="username" bind:value={username} minlength="3" maxlength="16" />

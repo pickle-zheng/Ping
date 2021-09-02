@@ -24,7 +24,7 @@ a:hover {
 }
 
 a:visited {
-  color: rgb(0, 80, 160);
+  color: rgb(104, 116, 128);
 }
 
 label {
@@ -56,17 +56,19 @@ body {
 .app {
   text-align: center;
   max-width: 728px;
+  width: 100%;
   margin: 0 auto;
 }
 
 header {
-  background-color: #181717;
+  background-color: #09d675;
   height: 10vh;
   min-height: 50px;
   color: white;
   position: fixed;
   width: 100%;
   max-width: 728px;
+  width: 100%;
   top: 0;
   display: flex;
   align-items: center;
@@ -74,6 +76,19 @@ header {
   z-index: 99;
   padding: 10px;
   box-sizing: border-box;
+  padding: 0 5em;
+}
+
+header h1 {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header .logo {
+  height: 30%;
 }
 
 .container {
@@ -81,7 +96,7 @@ header {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  background-color: #fff;
 }
 
 main {
@@ -89,6 +104,8 @@ main {
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  padding: 5em;
+  box-sizing: border-box;
 }
 
 main::-webkit-scrollbar {
@@ -96,7 +113,7 @@ main::-webkit-scrollbar {
 }
 
 main::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: #fff;
 }
 
 main::-webkit-scrollbar-thumb {
@@ -221,7 +238,7 @@ time {
   margin: 0 1rem;
 }
 
-img {
+.avartar {
   width: 40px;
   height: 40px;
   border-radius: 50%;

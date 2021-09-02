@@ -17,6 +17,8 @@
   let canAutoScroll = true;
   let unreadMessages = false;
 
+  let roomKey_value;
+
   function autoScroll() {
     setTimeout(() => scrollBottom?.scrollIntoView({ behavior: "auto" }), 50);
     unreadMessages = false;
@@ -29,7 +31,11 @@
 
   $: debouncedWatchScroll = debounce(watchScroll, 1000);
 
-  onMount(() => {
+  roomKey.subscribe((v) => {
+    roomKey_value = v;
+    console.error("Chat onMount", roomKey_value);
+    messages = [];
+
     var match = {
       // lexical queries are kind of like a limited RegEx or Glob.
       ".": {
@@ -40,12 +46,12 @@
     };
 
     // Get Messages
-    db.get("chat")
+    db.get(roomKey_value)
       .map(match)
       .once(async (data, id) => {
         if (data) {
           // Key for end-to-end encryption
-          const key = roomKey;
+          const key = roomKey_value;
 
           var message = {
             // transform the data
@@ -53,6 +59,8 @@
             what: (await SEA.decrypt(data.what, key)) + "", // force decrypt as text.
             when: GUN.state.is(data, "what"), // get the internal timestamp for the what property.
           };
+
+          console.log("message", message, "from", roomKey_value);
 
           if (message.what) {
             messages = [...messages.slice(-100), message].sort(
@@ -69,10 +77,11 @@
   });
 
   async function sendMessage() {
-    const secret = await SEA.encrypt(newMessage, roomKey);
+    console.error(roomKey_value);
+    const secret = await SEA.encrypt(newMessage, roomKey_value);
     const message = user.get("all").set({ what: secret });
     const index = new Date().toISOString();
-    db.get("chat").get(index).put(message);
+    db.get(roomKey_value).get(index).put(message);
     newMessage = "";
     canAutoScroll = true;
     autoScroll();

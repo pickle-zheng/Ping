@@ -13,6 +13,7 @@ export const user = db.user().recall({sessionStorage: true});
 export const username = writable('');
 
 user.get('alias').on(v => {
+    console.log('getting alias', v)
     username.set(v)
     console.error(v)
 })

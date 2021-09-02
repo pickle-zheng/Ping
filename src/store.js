@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
 
-export const roomKey = writable('CreativeProductionTeam');
+export const roomKey = writable('cpt');
