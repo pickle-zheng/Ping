@@ -33,7 +33,6 @@
 
   roomKey.subscribe((v) => {
     roomKey_value = v;
-    console.error("Chat onMount", roomKey_value);
     messages = [];
 
     var match = {

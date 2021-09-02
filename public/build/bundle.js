@@ -7058,6 +7058,8 @@ var app = (function () {
     const file$7 = "src\\components\\RoomSelector.svelte";
 
     function create_fragment$7(ctx) {
+    	let label;
+    	let t1;
     	let select;
     	let option0;
     	let option1;
@@ -7067,6 +7069,9 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			label = element("label");
+    			label.textContent = "Choose your channel";
+    			t1 = space();
     			select = element("select");
     			option0 = element("option");
     			option0.textContent = "Creative Production Team";
@@ -7074,24 +7079,28 @@ var app = (function () {
     			option1.textContent = "Dark Room";
     			option2 = element("option");
     			option2.textContent = "General";
+    			attr_dev(label, "for", "roomKey");
+    			add_location(label, file$7, 23, 0, 660);
     			option0.__value = "cpt";
     			option0.value = option0.__value;
-    			add_location(option0, file$7, 30, 2, 822);
+    			add_location(option0, file$7, 30, 2, 824);
     			option1.__value = "darkroom";
     			option1.value = option1.__value;
-    			add_location(option1, file$7, 31, 2, 879);
+    			add_location(option1, file$7, 31, 2, 881);
     			option2.__value = "general";
     			option2.value = option2.__value;
-    			add_location(option2, file$7, 32, 2, 926);
+    			add_location(option2, file$7, 32, 2, 928);
     			attr_dev(select, "id", "roomKey");
     			attr_dev(select, "name", "roomKey");
     			if (/*roomKey_value*/ ctx[0] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[2].call(select));
-    			add_location(select, file$7, 24, 0, 708);
+    			add_location(select, file$7, 24, 0, 710);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
+    			insert_dev(target, label, anchor);
+    			insert_dev(target, t1, anchor);
     			insert_dev(target, select, anchor);
     			append_dev(select, option0);
     			append_dev(select, option1);
@@ -7115,6 +7124,8 @@ var app = (function () {
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
+    			if (detaching) detach_dev(label);
+    			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(select);
     			mounted = false;
     			run_all(dispose);
@@ -7960,7 +7971,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (123:2) {:else}
+    // (122:2) {:else}
     function create_else_block$1(ctx) {
     	let main;
     	let login;
@@ -7971,7 +7982,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(login.$$.fragment);
-    			add_location(main, file$4, 123, 4, 3511);
+    			add_location(main, file$4, 122, 4, 3460);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
@@ -7998,14 +8009,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(123:2) {:else}",
+    		source: "(122:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (92:2) {#if $username}
+    // (91:2) {#if $username}
     function create_if_block$1(ctx) {
     	let main;
     	let each_blocks = [];
@@ -8057,16 +8068,16 @@ var app = (function () {
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
     			attr_dev(div, "class", "dummy");
-    			add_location(div, file$4, 97, 6, 2904);
-    			add_location(main, file$4, 92, 4, 2736);
+    			add_location(div, file$4, 96, 6, 2853);
+    			add_location(main, file$4, 91, 4, 2685);
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Type a message...");
     			attr_dev(input, "maxlength", "100");
-    			add_location(input, file$4, 101, 6, 3024);
+    			add_location(input, file$4, 100, 6, 2973);
     			attr_dev(button, "type", "submit");
     			button.disabled = button_disabled_value = !/*newMessage*/ ctx[0];
-    			add_location(button, file$4, 108, 6, 3170);
-    			add_location(form, file$4, 100, 4, 2971);
+    			add_location(button, file$4, 107, 6, 3119);
+    			add_location(form, file$4, 99, 4, 2920);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
@@ -8180,14 +8191,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(92:2) {#if $username}",
+    		source: "(91:2) {#if $username}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:6) {#each messages as message (message.when)}
+    // (93:6) {#each messages as message (message.when)}
     function create_each_block(key_1, ctx) {
     	let first;
     	let chatmessage;
@@ -8240,14 +8251,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(94:6) {#each messages as message (message.when)}",
+    		source: "(93:6) {#each messages as message (message.when)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (112:4) {#if !canAutoScroll}
+    // (111:4) {#if !canAutoScroll}
     function create_if_block_1$1(ctx) {
     	let div;
     	let button;
@@ -8263,9 +8274,9 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t = text("\r\n\r\n          👇");
     			toggle_class(button, "red", /*unreadMessages*/ ctx[4]);
-    			add_location(button, file$4, 113, 8, 3312);
+    			add_location(button, file$4, 112, 8, 3261);
     			attr_dev(div, "class", "scroll-button");
-    			add_location(div, file$4, 112, 6, 3275);
+    			add_location(div, file$4, 111, 6, 3224);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -8306,14 +8317,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(112:4) {#if !canAutoScroll}",
+    		source: "(111:4) {#if !canAutoScroll}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (115:10) {#if unreadMessages}
+    // (114:10) {#if unreadMessages}
     function create_if_block_2(ctx) {
     	let t;
 
@@ -8333,7 +8344,7 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(115:10) {#if unreadMessages}",
+    		source: "(114:10) {#if unreadMessages}",
     		ctx
     	});
 
@@ -8361,7 +8372,7 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			attr_dev(div, "class", "container");
-    			add_location(div, file$4, 90, 0, 2688);
+    			add_location(div, file$4, 89, 0, 2637);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8452,7 +8463,6 @@ var app = (function () {
 
     	roomKey.subscribe(v => {
     		roomKey_value = v;
-    		console.error("Chat onMount", roomKey_value);
     		$$invalidate(1, messages = []);
 
     		var match = {
@@ -9064,7 +9074,7 @@ var app = (function () {
     	return block;
     }
 
-    // (19:4) <Link to="chat">
+    // (23:4) <Link to="chat">
     function create_default_slot$1(ctx) {
     	let button;
 
@@ -9072,7 +9082,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			button.textContent = "Start \"Ping\"ing";
-    			add_location(button, file$1, 18, 20, 511);
+    			add_location(button, file$1, 22, 20, 667);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -9086,7 +9096,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(19:4) <Link to=\\\"chat\\\">",
+    		source: "(23:4) <Link to=\\\"chat\\\">",
     		ctx
     	});
 
@@ -9108,6 +9118,8 @@ var app = (function () {
     	let t5;
     	let p3;
     	let t7;
+    	let p4;
+    	let t9;
     	let link1;
     	let current;
 
@@ -9148,6 +9160,9 @@ var app = (function () {
     			p3 = element("p");
     			p3.textContent = "Just like how cryto currency works. None of the messages lives in a single\r\n      server.";
     			t7 = space();
+    			p4 = element("p");
+    			p4.textContent = "All the messages are fully encrypted, only the members of the channel\r\n      would have the key to decrypt and read the messages.";
+    			t9 = space();
     			create_component(link1.$$.fragment);
     			attr_dev(nav, "class", "logoWrapper");
     			add_location(nav, file$1, 6, 4, 102);
@@ -9156,6 +9171,7 @@ var app = (function () {
     			add_location(p1, file$1, 12, 4, 305);
     			add_location(p2, file$1, 13, 4, 333);
     			add_location(p3, file$1, 14, 4, 379);
+    			add_location(p4, file$1, 18, 4, 495);
     			set_style(main, "background-color", "grey");
     			set_style(main, "color", "black");
     			add_location(main, file$1, 10, 2, 237);
@@ -9180,6 +9196,8 @@ var app = (function () {
     			append_dev(main, t5);
     			append_dev(main, p3);
     			append_dev(main, t7);
+    			append_dev(main, p4);
+    			append_dev(main, t9);
     			mount_component(link1, main, null);
     			current = true;
     		},

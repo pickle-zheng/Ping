@@ -16,6 +16,10 @@
       Just like how cryto currency works. None of the messages lives in a single
       server.
     </p>
+    <p>
+      All the messages are fully encrypted, only the members of the channel
+      would have the key to decrypt and read the messages.
+    </p>
     <Link to="chat"><button>Start "Ping"ing</button></Link>
   </main>
 </div>

@@ -21,7 +21,7 @@
   }
 </script>
 
-<!-- <label for="roomKey">Room Key</label> -->
+<label for="roomKey">Choose your channel</label>
 <select
   id="roomKey"
   name="roomKey"
