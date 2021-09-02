@@ -4,8 +4,9 @@
   import { onMount } from "svelte";
   import { username, user } from "./user";
   import debounce from "lodash.debounce";
-
   import GUN from "gun";
+  import { roomKey } from "./store";
+
   const db = GUN();
 
   let newMessage;
@@ -44,7 +45,7 @@
       .once(async (data, id) => {
         if (data) {
           // Key for end-to-end encryption
-          const key = "#foo";
+          const key = roomKey;
 
           var message = {
             // transform the data
@@ -68,7 +69,7 @@
   });
 
   async function sendMessage() {
-    const secret = await SEA.encrypt(newMessage, "#foo");
+    const secret = await SEA.encrypt(newMessage, roomKey);
     const message = user.get("all").set({ what: secret });
     const index = new Date().toISOString();
     db.get("chat").get(index).put(message);

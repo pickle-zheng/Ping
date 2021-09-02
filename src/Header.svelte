@@ -7,7 +7,7 @@
 </script>
 
 <header>
-  <h1>🔫💬</h1>
+  <h1>Ping</h1>
   {#if $username}
     <div class="user-bio">
       <span>Hello <strong>{$username}</strong></span>
@@ -19,6 +19,6 @@
 
     <button class="signout-button" on:click={signout}>Sign Out</button>
   {:else}
-    <h3>Gun.js Chat</h3>
+    <h3>Powered By Gun.js</h3>
   {/if}
 </header>
