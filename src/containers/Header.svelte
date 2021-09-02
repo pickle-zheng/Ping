@@ -1,7 +1,8 @@
 <script>
-  import { username, user } from "./user";
-  import { roomKey } from "./store";
-  import RoomSelector from "./RoomSelector.svelte";
+  import { Link } from "svelte-navigator";
+  import { username, user } from "../utils/user";
+  import { roomKey } from "../utils/store";
+  import RoomSelector from "../components/RoomSelector.svelte";
 
   let roomKey_value;
   function signout() {
@@ -13,9 +14,9 @@
 
 <header>
   <div class="logoWrapper">
-    <img class="logo" src="assets/logo.png" alt="logo" />
+    <Link to="/"><img class="logo" src="assets/logo.png" alt="logo" /></Link>
     {#if $username}
-      <RoomSelector/>
+      <RoomSelector />
     {/if}
   </div>
   {#if $username}

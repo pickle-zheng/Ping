@@ -87,6 +87,13 @@ header .logoWrapper {
   align-items: center;
 }
 
+header .logoWrapper a {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 header .logo {
   height: 30%;
 }
@@ -178,7 +185,7 @@ button:disabled {
 }
 
 label {
-  color: white;
+  color: black;
   margin: 0.5rem 0;
 }
 ul,

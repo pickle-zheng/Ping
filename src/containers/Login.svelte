@@ -1,7 +1,7 @@
 <script>
-  import { user } from "./user";
-  import { roomKey } from "./store";
-  import RoomSelector from "./RoomSelector.svelte";
+  import { user } from "../utils/user";
+  import { roomKey } from "../utils/store";
+  import RoomSelector from "../components/RoomSelector.svelte";
   let username;
   let password;
   let roomKey_value;
@@ -24,7 +24,7 @@
   }
 </script>
 
-<RoomSelector/>
+<RoomSelector />
 
 <label for="username">Username</label>
 <input name="username" bind:value={username} minlength="3" maxlength="16" />

@@ -1,5 +1,5 @@
 <script>
-  import { roomKey } from "./store";
+  import { roomKey } from "../utils/store";
   let roomKey_value;
   function makeid(length) {
     var result = "";

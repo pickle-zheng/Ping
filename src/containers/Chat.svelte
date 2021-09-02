@@ -1,11 +1,11 @@
 <script>
   import Login from "./Login.svelte";
-  import ChatMessage from "./ChatMessage.svelte";
+  import ChatMessage from "../components/ChatMessage.svelte";
   import { onMount } from "svelte";
-  import { username, user } from "./user";
+  import { username, user } from "../utils/user";
   import debounce from "lodash.debounce";
   import GUN from "gun";
-  import { roomKey } from "./store";
+  import { roomKey } from "../utils/store";
 
   const db = GUN();
 
