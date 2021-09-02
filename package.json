@@ -2,7 +2,7 @@
   "name": "ping",
   "productName": "ping",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "A Decentralised Chat App",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -12,7 +12,8 @@
     "lint": "echo \"No linting configured\"",
     "svelte-build": "rollup -c",
     "svelte-dev": "rollup -c -w",
-    "svelte-start": "sirv public"
+    "svelte-start": "sirv public",
+    "deploy-webapp": "npm run svelte-build && firebase deploy"
   },
   "keywords": [],
   "author": {
@@ -22,7 +23,9 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "asarUnpack": ["**/*.node"]
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",

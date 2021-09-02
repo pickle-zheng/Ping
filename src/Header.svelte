@@ -1,6 +1,7 @@
 <script>
   import { username, user } from "./user";
   import { roomKey } from "./store";
+  import RoomSelector from "./RoomSelector.svelte";
 
   let roomKey_value;
   function signout() {
@@ -11,15 +12,14 @@
 </script>
 
 <header>
-  <h1>
+  <div class="logoWrapper">
     <img class="logo" src="assets/logo.png" alt="logo" />
     {#if $username}
-      <span>Channel {roomKey_value}</span>
+      <RoomSelector/>
     {/if}
-  </h1>
+  </div>
   {#if $username}
     <div class="user-bio">
-      <span>Hello <strong>{$username}</strong></span>
       <img
         class="avartar"
         src={`https://avatars.dicebear.com/api/initials/${$username}.svg`}

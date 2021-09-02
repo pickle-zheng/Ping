@@ -79,7 +79,7 @@ header {
   padding: 0 5em;
 }
 
-header h1 {
+header .logoWrapper {
   position: relative;
   height: 100%;
   display: flex;
@@ -117,7 +117,7 @@ main::-webkit-scrollbar-track {
 }
 
 main::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: #09d675;
 }
 
 form {
@@ -133,7 +133,7 @@ form {
 
 form button {
   width: 20%;
-  background-color: rgb(72, 207, 79);
+  background-color: #09d675;
 }
 
 input {
